@@ -27,7 +27,7 @@ const Home: NextPage = () => {
     <Fragment>
       {/* Head */}
       <Head>
-        <title>Almound Joy</title>
+        <title>Almond Joy</title>
       </Head>
       {/* Recommendations */}
       <Box sx={{ margin: "2vw auto" }}>
