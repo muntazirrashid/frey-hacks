@@ -1,0 +1,32 @@
+[
+  {
+    "image": "https://reneenicoleskitchen.com/wp-content/uploads/2020/06/Blueberry-Ice-Cream-Image-1-735x735.jpg",
+    "title": "BlueBerry Punch",
+    "description": "Fun-Filled Blueberries inside a scoopful of fun!",
+    "tags": ["Happy", "Soothing"]
+  },
+  {
+    "image": "https://reneenicoleskitchen.com/wp-content/uploads/2020/06/Blueberry-Ice-Cream-Image-1-735x735.jpg",
+    "title": "Royal Cranberry Fudge",
+    "description": "Fun-Filled Cranberry with a lot of fudge, inside a scoopful of fun!",
+    "tags": ["sad", "anxious"]
+  },
+  {
+    "image": "https://public-assets.meredithcorp.io/ff39d1dc8423ebbe231b9bc89e019344/1650198213VIC.png",
+    "title": "Plain Vanilla",
+    "description": "Nothing better than plain vanilla",
+    "tags": ["Happy", "fearful"]
+  },
+  {
+    "image": "https://saltandbaker.com/wp-content/uploads/2018/02/best-homemade-chocolate-ice-cream.jpg",
+    "title": "Mega Chocolate Ice-Cream",
+    "description": "Dark chocolate for lightening up your darkest days!",
+    "tags": ["sad", "Soothing"]
+  },
+  {
+    "image": "https://5.imimg.com/data5/TX/PO/MY-31939142/butterscotch-ice-cream-500x500.jpg",
+    "title": "Butter Scotch",
+    "description": "Stay blessed with simple yet tasty butter scotch",
+    "tags": ["sad", "fearful"]
+  }
+]
