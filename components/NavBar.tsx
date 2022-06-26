@@ -13,7 +13,20 @@ import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 
-const pages = ["Dashboard", "Create", "Social"];
+const pages = [
+  {
+    title: "Dashboard",
+    link: "/",
+  },
+  {
+    title: "Create",
+    link: "/create",
+  },
+  {
+    title: "Social",
+    link: "/social",
+  },
+];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 const guestSetting = ["Sign up"];
 
@@ -78,9 +91,15 @@ const NavBar = () => {
                 display: { xs: "block", md: "none" },
               }}
             >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+              {pages.map((page, index) => (
+                <MenuItem
+                  key={index}
+                  onClick={() => {
+                    handleCloseNavMenu();
+                    window.location.href = `${page.link}`;
+                  }}
+                >
+                  <Typography textAlign="center">{page.title}</Typography>
                 </MenuItem>
               ))}
             </Menu>
@@ -94,13 +113,16 @@ const NavBar = () => {
             Almond
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-            {pages.map((page) => (
+            {pages.map((page, index) => (
               <Button
-                key={page}
-                onClick={handleCloseNavMenu}
+                key={index}
+                onClick={() => {
+                  handleCloseNavMenu();
+                  window.location.href = `${page.link}`;
+                }}
                 sx={{ my: 2, color: "white", display: "block" }}
               >
-                {page}
+                {page.title}
               </Button>
             ))}
           </Box>

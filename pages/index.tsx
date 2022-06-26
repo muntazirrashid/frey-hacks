@@ -1,6 +1,7 @@
 import { HourglassDisabledRounded } from "@mui/icons-material";
 import type { NextPage } from "next";
-import React from "react";
+import { Fragment } from "react";
+import Head from "next/head";
 
 // importing material UI
 import Grid from "@mui/material/Grid";
@@ -12,7 +13,11 @@ import RecipeCard from "../components/Card/RecipeCard";
 
 const Home: NextPage = () => {
   return (
-    <React.Fragment>
+    <Fragment>
+      {/* Head */}
+      <Head>
+        <title>Dashboard</title>
+      </Head>
       {/* Recommendations */}
       <Box sx={{ margin: "2vw auto" }}>
         <Holder
@@ -53,7 +58,27 @@ const Home: NextPage = () => {
           </Grid>
         </Holder>
       </Box>
-    </React.Fragment>
+      {/* Recipes by you */}
+      <Box sx={{ margin: "2vw auto" }}>
+        <Holder
+          title="New Recipes and Combinations"
+          subtitle="See if these new summer aids are perfectly soothing your taste buds..."
+        >
+          <Grid container spacing={1}>
+            {[...Array(3)].map((card, index) => (
+              <Grid item md={4} sm={12}>
+                <RecipeCard
+                  author="Ali"
+                  title="Something food"
+                  description="We refresh our recommendations to better match your refreshments requirements..."
+                  steps={["Step1", "step2"]}
+                />
+              </Grid>
+            ))}
+          </Grid>
+        </Holder>
+      </Box>
+    </Fragment>
   );
 };
 
