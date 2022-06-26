@@ -37,12 +37,17 @@ type props = {
   author: string;
   title: string;
   description: string;
+  img: string;
+  date: string;
+  alt: string;
   steps: string[];
 };
 
 const RecipeCard = (props: props) => {
   const [expanded, setExpanded] = useState(false);
   const [isFav, setFav] = useToggle(false);
+
+
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
@@ -53,7 +58,7 @@ const RecipeCard = (props: props) => {
       <CardHeader
         avatar={
           <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-            {props.author}
+            {props.author[0]}
           </Avatar>
         }
         action={
@@ -62,13 +67,13 @@ const RecipeCard = (props: props) => {
           </IconButton>
         }
         title={props.title}
-        subheader="September 14, 2016"
+        subheader = {props.date}
       />
       <CardMedia
         component="img"
         height="194"
-        image="https://images.theconversation.com/files/368263/original/file-20201109-22-lqiq5c.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1200&h=1200.0&fit=crop"
-        alt="Paella dish"
+        image = {props.img}
+        alt= {props.alt}
       />
       <CardContent>
         <Typography variant="body2" color="text.secondary">
