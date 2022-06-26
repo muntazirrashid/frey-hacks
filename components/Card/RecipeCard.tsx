@@ -39,6 +39,9 @@ type props = {
   author: string;
   title: string;
   description: string;
+  img: string;
+  date: string;
+  alt: string;
   steps: string[];
 };
 
