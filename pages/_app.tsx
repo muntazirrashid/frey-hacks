@@ -11,9 +11,10 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Header pathname="/" />
-      <Script src="/modernizr.js" type="text/javascript" strategy="beforeInteractive" />
       <Home />
+      <Script src="/modernizr.js" type="text/javascript" strategy="beforeInteractive" />
       <Component {...pageProps} />
+
       <Footer />
     </>
   );
