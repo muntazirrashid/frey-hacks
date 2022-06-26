@@ -1,5 +1,5 @@
-import Button from '@mui/material/Button';
-import styles from './home.module.scss';
+import Button from "@mui/material/Button";
+import styles from "./home.module.scss";
 
 const Presenter = () => {
   return (
@@ -13,10 +13,15 @@ const Presenter = () => {
           playsInline
         ></video>
         <div className={styles.pitch}>
-          <h1>Find the the Ice Cream</h1>
+          <h1>Find the the Refreshment</h1>
           <h1>Flavours According to your Mood</h1>
           <p>It is just click away from you</p>
-          <Button variant="contained">Get Started</Button>
+          <Button
+            variant="contained"
+            onClick={() => (window.location.href = "/suggest")}
+          >
+            Get Started
+          </Button>
         </div>
       </div>
     </section>

@@ -18,6 +18,8 @@ import MoreVertIcon from "@mui/icons-material/MoreVert";
 
 import useToggle from "../../hooks/useToggle";
 
+import Modal from "../modal";
+
 interface ExpandMoreProps extends IconButtonProps {
   expand: boolean;
 }
@@ -43,65 +45,70 @@ type props = {
 const RecipeCard = (props: props) => {
   const [expanded, setExpanded] = useState(false);
   const [isFav, setFav] = useToggle(false);
+  const [modal, setStatus] = useToggle(false);
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
 
   return (
-    <Card sx={{ maxWidth: 345, margin: "0" }}>
-      <CardHeader
-        avatar={
-          <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-            {props.author}
-          </Avatar>
-        }
-        action={
-          <IconButton aria-label="settings">
-            <MoreVertIcon />
-          </IconButton>
-        }
-        title={props.title}
-        subheader="September 14, 2016"
-      />
-      <CardMedia
-        component="img"
-        height="194"
-        image="https://images.theconversation.com/files/368263/original/file-20201109-22-lqiq5c.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1200&h=1200.0&fit=crop"
-        alt="Paella dish"
-      />
-      <CardContent>
-        <Typography variant="body2" color="text.secondary">
-          {props.description}
-        </Typography>
-      </CardContent>
-      <CardActions disableSpacing>
-        <IconButton aria-label="add to favorites" onClick={setFav}>
-          <FavoriteIcon style={isFav ? { color: "red" } : {}} />
-        </IconButton>
-        <IconButton aria-label="share">
-          <ShareIcon />
-        </IconButton>
-        <ExpandMore
-          expand={expanded}
-          onClick={handleExpandClick}
-          aria-expanded={expanded}
-          aria-label="show more"
-        >
-          <ExpandMoreIcon />
-        </ExpandMore>
-      </CardActions>
-      <Collapse in={expanded} timeout="auto" unmountOnExit>
+    <>
+      <Card sx={{ maxWidth: 345, margin: "0" }}>
+        <CardHeader
+          avatar={
+            <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
+              {props.author}
+            </Avatar>
+          }
+          action={
+            <IconButton aria-label="settings">
+              <MoreVertIcon />
+            </IconButton>
+          }
+          title={props.title}
+          subheader="September 14, 2016"
+        />
+
+        <CardMedia
+          component="img"
+          height="194"
+          image="https://images.theconversation.com/files/368263/original/file-20201109-22-lqiq5c.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1200&h=1200.0&fit=crop"
+          alt="Paella dish"
+        />
         <CardContent>
-          <Typography paragraph>Method:</Typography>
-          {props.steps.map((step, index) => (
-            <Typography paragraph key={index}>
-              {step}
-            </Typography>
-          ))}
+          <Typography variant="body2" color="text.secondary">
+            {props.description}
+          </Typography>
         </CardContent>
-      </Collapse>
-    </Card>
+        <CardActions disableSpacing>
+          <IconButton aria-label="add to favorites" onClick={setFav}>
+            <FavoriteIcon style={isFav ? { color: "red" } : {}} />
+          </IconButton>
+          <IconButton aria-label="share">
+            <ShareIcon onClick={setStatus} />
+          </IconButton>
+          <ExpandMore
+            expand={expanded}
+            onClick={handleExpandClick}
+            aria-expanded={expanded}
+            aria-label="show more"
+          >
+            <ExpandMoreIcon />
+          </ExpandMore>
+        </CardActions>
+        <Collapse in={expanded} timeout="auto" unmountOnExit>
+          <CardContent>
+            <Typography paragraph>Method:</Typography>
+            {props.steps.map((step, index) => (
+              <Typography paragraph key={index}>
+                {step}
+              </Typography>
+            ))}
+          </CardContent>
+        </Collapse>
+      </Card>
+      {modal ? <Modal value="ali" /> : <></>}
+    </>
   );
 };
 
