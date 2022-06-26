@@ -28,6 +28,7 @@ const Holder = (props: Props) => {
       >
         <h1>{props.title}</h1>
         <p style={{ margin: "-1vw 0 0 0" }}>{props.subtitle}</p>
+        <hr />
       </Box>
 
       <Box

@@ -53,7 +53,7 @@ const RecipeCard = (props: props) => {
       <CardHeader
         avatar={
           <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-            {props.author[0]}
+            {props.author}
           </Avatar>
         }
         action={
