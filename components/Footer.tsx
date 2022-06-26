@@ -3,9 +3,7 @@ import { useState, useRef } from "react";
 import Box from "@mui/material/Box";
 import BottomNavigation from "@mui/material/BottomNavigation";
 import BottomNavigationAction from "@mui/material/BottomNavigationAction";
-import RestoreIcon from "@mui/icons-material/Restore";
-import FavoriteIcon from "@mui/icons-material/Favorite";
-import ArchiveIcon from "@mui/icons-material/Archive";
+import GitHubIcon from '@mui/icons-material/GitHub';
 import Paper from "@mui/material/Paper";
 
 export default function FixedBottomNavigation() {
@@ -25,9 +23,7 @@ export default function FixedBottomNavigation() {
             setValue(newValue);
           }}
         >
-          <BottomNavigationAction label="Recents" icon={<RestoreIcon />} />
-          <BottomNavigationAction label="Favorites" icon={<FavoriteIcon />} />
-          <BottomNavigationAction label="Archive" icon={<ArchiveIcon />} />
+          <a href="https://github.com/Vilayat-Ali/frey-hacks" target="_blank"> <BottomNavigationAction label="GitHub" icon={<GitHubIcon />} /></a>
         </BottomNavigation>
       </Paper>
     </Box>
