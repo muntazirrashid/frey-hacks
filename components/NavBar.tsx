@@ -22,10 +22,6 @@ const pages = [
     title: "Create",
     link: "/create",
   },
-  {
-    title: "Social",
-    link: "/social",
-  },
 ];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 const guestSetting = ["Sign up"];

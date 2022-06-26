@@ -1,5 +1,6 @@
-import firebase from "firebase/app";
+import firebase, { getApps, initializeApp } from "firebase/app";
 import "firebase/auth";
+import { getAuth } from "firebase/auth";
 import "firebase/firestore";
 
 const credentials = {
@@ -12,6 +13,12 @@ const credentials = {
   measurementId: process.env.NEXT_PUBLIC_measurementId,
 };
 
-if (!firebase.getApps.length) {
+if (!getApps.length) {
   firebase.initializeApp(credentials);
 }
+
+const app = initializeApp(credentials);
+
+const auth = getAuth(app);
+
+export { auth };
